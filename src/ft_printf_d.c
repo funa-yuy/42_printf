@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:19:31 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/13 23:44:13 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/14 02:39:57 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@
 int	ft_printf_d(int d)
 {
 	size_t	i_len;
+	char	*s;
 
-	i_len = ft_strlen(ft_itoa(d));
-	return (write(1, ft_itoa(d), i_len));
+	s = ft_itoa(d);
+	i_len = ft_strlen(s);
+	write(1, s, i_len);
+	free(s);
+	return (i_len);
 }
