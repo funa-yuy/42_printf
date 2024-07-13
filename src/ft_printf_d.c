@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_x_upper.c                                :+:      :+:    :+:   */
+/*   ft_printf_d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:19:31 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/13 22:31:41 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/13 23:44:13 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
+#include "../libft/libft.h"
+#include "../ft_printf.h"
 
-int	ft_printf_x_upper(unsigned int x)
+int	ft_printf_d(int d)
 {
-	char	*base;
-	char	memo[9];
-	int		i;
+	size_t	i_len;
 
-	base = "0123456789ABCDEF";
-	memo[8] = '\0';
-	memo[7] = base[x % 16];
-	i = 7;
-	while (x >= 16)
-	{
-		x /= 16;
-		memo[--i] = base[x % 16];
-	}
-	return (write(STDOUT_FILENO, memo + i, 8 - i));
+	i_len = ft_strlen(ft_itoa(d));
+	return (write(1, ft_itoa(d), i_len));
 }

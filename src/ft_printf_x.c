@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_printf_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 19:57:06 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/07/03 15:02:16 by miyuu            ###   ########.fr       */
+/*   Created: 2024/07/13 22:19:31 by miyuu             #+#    #+#             */
+/*   Updated: 2024/07/13 23:44:28 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft/libft.h"
+#include "../ft_printf.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_printf_x(unsigned int x)
 {
-	char	*ptr;
-	size_t	total_size;
-	size_t	i;
+	char	*base;
+	char	memo[9];
+	int		i;
 
-	if (count != 0 && size != 0 && SIZE_MAX / count <= size)
-		return (NULL);
-	total_size = count * size;
-	i = 0;
-	ptr = malloc(total_size);
-	if (ptr == NULL)
-		return (NULL);
-	while (total_size > i)
+	base = "0123456789abcdef";
+	memo[8] = '\0';
+	memo[7] = base[x % 16];
+	i = 7;
+	while (x >= 16)
 	{
-		ptr[i] = 0;
-		i++;
+		x /= 16;
+		memo[--i] = base[x % 16];
 	}
-	return (ptr);
+	return (write(STDOUT_FILENO, memo + i, 8 - i));
 }

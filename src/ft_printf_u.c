@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_x.c                                      :+:      :+:    :+:   */
+/*   ft_printf_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:19:31 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/13 22:31:47 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/13 23:44:20 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
+#include "../libft/libft.h"
+#include "../ft_printf.h"
 
-int	ft_printf_x(unsigned int x)
+int	ft_printf_u(unsigned int u)
 {
-	char	*base;
-	char	memo[9];
+	char	result[11];
 	int		i;
 
-	base = "0123456789abcdef";
-	memo[8] = '\0';
-	memo[7] = base[x % 16];
-	i = 7;
-	while (x >= 16)
+	result[10] = '\0';
+	result[9] = u % 10 + '0';
+	i = 9;
+	while (u >= 10)
 	{
-		x /= 16;
-		memo[--i] = base[x % 16];
+		u /= 10;
+		result[--i] = u % 10 + '0';
 	}
-	return (write(STDOUT_FILENO, memo + i, 8 - i));
+	return (write(STDOUT_FILENO, result + i, 10 - i));
 }

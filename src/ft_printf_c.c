@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_s.c                                      :+:      :+:    :+:   */
+/*   ft_printf_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:19:31 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/13 22:31:13 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/13 23:44:11 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "ft_printf.h"
+#include "../libft/libft.h"
+#include "../ft_printf.h"
 
-int	ft_printf_s(char *s)
+int	ft_printf_c(int c)
 {
-	size_t	s_len;
-
-	s_len = ft_strlen(s);
-	return (write(1, s, s_len));
+	return (write(STDOUT_FILENO, &c, 1));
 }

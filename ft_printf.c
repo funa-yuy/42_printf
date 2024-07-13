@@ -6,11 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:33:15 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/13 23:29:35 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/14 00:50:25 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./libft/libft.h"
 #include "ft_printf.h"
 
 int	ft_printf_format(const char *str, va_list ap, size_t i)
@@ -67,7 +67,7 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end (ap);
-	printf("count = %d\n",count);
+	// printf("count = %d\n",count);
 	return (count);
 }
 
