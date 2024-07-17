@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 02:07:51 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/17 20:55:28 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/17 22:16:59 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ printf("\x1b[31m"); // 前景赤色出力
 	printf("count = %d\n", count);
 
 
-
-
 printf("\n以下%%c\n");
 	char	c = 'i';
 	count = printf("or:%%c = %c\n", c);
@@ -99,6 +97,16 @@ printf("\n以下%%c\n");
 	count =  ft_printf("%%%c", 'x');
 	printf("count = %d\n", count);
 
+
+	count =  printf("%c%c%c", 'a', '\t', 'b');
+	printf("count = %d\n", count);
+	count =  ft_printf("%c%c%c", 'a', '\t', 'b');
+	printf("count = %d\n", count);
+
+	count =  printf("%c%c%c", 'c', 'b', 'a');
+	printf("count = %d\n", count);
+	count =  ft_printf("%c%c%c", 'c', 'b', 'a');
+	printf("count = %d\n", count);
 
 printf("\n以下%%s\n");
 	char	s[] = "Hello, World!";
@@ -153,9 +161,13 @@ printf("\n以下%%d\n");
 	count = ft_printf("ft:%%d_int = %d\n", d_int);
 	printf("count = %d\n", count);
 
-	count = printf(" %d ", 0);
+	count = printf("%d", 0);
 	printf("count = %d\n", count);
-	count = ft_printf(" %d ", 0);
+	count = ft_printf("%d", 0);
+	printf("count = %d\n", count);
+	count = printf("%i", 0);
+	printf("count = %d\n", count);
+	count = ft_printf("%i", 0);
 	printf("count = %d\n", count);
 	count = printf(" %d ", -1);
 	printf("count = %d\n", count);
