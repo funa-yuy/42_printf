@@ -6,16 +6,16 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 21:48:53 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/13 23:42:42 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/14 15:05:11 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdarg.h>
 
 int	ft_printf_c(int c);
 int	ft_printf_s(char *s);

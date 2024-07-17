@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:33:15 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/14 02:06:00 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/17 18:44:09 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	ft_printf_format(const char *str, va_list ap, size_t i)
 	else if (str[i] == 'c')
 		count = ft_printf_c(va_arg(ap, int));
 	else if (str[i] == 's')
-		count = ft_printf_s(va_arg(ap, char*));
+		count = ft_printf_s(va_arg(ap, char *));
 	else if (str[i] == 'p')
-		count = ft_printf_p(va_arg(ap, void*));
+		count = ft_printf_p(va_arg(ap, void *));
 	else if (str[i] == 'u')
 		count = ft_printf_u(va_arg(ap, unsigned int));
 	else if (str[i] == 'x')
@@ -49,7 +49,7 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	count = 0;
 	if (!str)
-		return (0);
+		return (-1);
 	va_start(ap, str);
 	while (str[i] != '\0')
 	{
@@ -58,7 +58,7 @@ int	ft_printf(const char *str, ...)
 			count += ft_printf_format(str, ap, i);
 			i++;
 			if (str[i] != '%')
-				va_arg(ap, char*);
+				va_arg(ap, char *);
 		}
 		else
 			count += write(1, &str[i], 1);
