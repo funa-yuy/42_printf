@@ -3,52 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 21:28:39 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/06/09 15:55:06 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/07/20 22:04:54 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_intlen(long n, int len)
+static size_t	digit(int n)
 {
-	if (n < 0)
-	{
-		len++;
-		n = -n;
-	}
-	while (n > 9)
-	{
-		n = n / 10;
-		len++;
-	}
-	return (len);
+	if (n / 10 == 0)
+		return (1);
+	return (digit(n / 10) + 1);
+}
+
+static void	set_digit(int n, char *p, size_t cur)
+{
+	p[cur] = n % 10 * ((n > 0) * 2 - 1) + '0';
+	if (n / 10)
+		set_digit(n / 10, p, cur - 1);
 }
 
 char	*ft_itoa(int n)
 {
-	char			*dst;
-	int				len;
-	unsigned int	nb;
+	size_t	len;
+	char	*p;
 
-	dst = ft_calloc((ft_intlen(n, 1) + 1), sizeof(char));
-	if (!dst)
+	len = digit(n) + (n < 0);
+	p = malloc(len + 1);
+	if (p == NULL)
 		return (NULL);
-	len = ft_intlen(n, 1);
-	dst[len] = '\0';
+	p[len] = '\0';
 	if (n < 0)
-	{
-		dst[0] = '-';
-		nb = -n;
-	}
-	else
-		nb = n;
-	while (len-- && dst[len] != '-')
-	{
-		dst[len] = (nb % 10) + '0';
-		nb /= 10;
-	}
-	return (dst);
+		p[0] = '-';
+	set_digit(n, p, len - 1);
+	return (p);
 }
