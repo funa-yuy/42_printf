@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:33:15 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/17 22:22:04 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/20 15:42:18 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_printf_format(const char *str, va_list ap, size_t i)
 {
 	int	count;
 
-	i += 1;
 	if (str[i] == '%')
 		count = write(1, &str[i], 1);
 	else if (str[i] == 'i' || str[i] == 'd')
@@ -55,12 +54,7 @@ int	ft_printf(const char *str, ...)
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
-		{
-			count += ft_printf_format(str, ap, i);
-			i++;
-			if (str[i] != '%')
-				va_arg(ap, char *);
-		}
+			count += ft_printf_format(str, ap, ++i);
 		else
 			count += write(1, &str[i], 1);
 		if (count < 0)
