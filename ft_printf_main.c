@@ -6,13 +6,13 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 17:33:15 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/20 15:42:48 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/20 15:48:14 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "./libft/libft.h"
 #include "ft_printf.h"
+#include <limits.h>
 
 int	ft_printf_format(const char *str, va_list ap, size_t i)
 {
