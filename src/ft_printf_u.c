@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:19:31 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/13 23:44:20 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/21 01:19:33 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int	ft_printf_u(unsigned int u)
 		u /= 10;
 		result[--i] = u % 10 + '0';
 	}
-	return (write(STDOUT_FILENO, result + i, 10 - i));
+	return (write(1, result + i, 10 - i));
 }

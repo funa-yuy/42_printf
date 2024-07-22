@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:19:31 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/13 23:44:28 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/22 13:04:16 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 int	ft_printf_x(unsigned int x)
 {
 	char	*base;
-	char	memo[9];
+	char	result[9];
 	int		i;
 
 	base = "0123456789abcdef";
-	memo[8] = '\0';
-	memo[7] = base[x % 16];
+	result[8] = '\0';
+	result[7] = base[x % 16];
 	i = 7;
 	while (x >= 16)
 	{
 		x /= 16;
-		memo[--i] = base[x % 16];
+		result[--i] = base[x % 16];
 	}
-	return (write(STDOUT_FILENO, memo + i, 8 - i));
+	return (write(1, result + i, 8 - i));
 }

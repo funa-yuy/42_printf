@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 02:07:51 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/17 22:16:59 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/22 13:27:42 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int	main(void)
 
 int count = 0;
 
-
-printf("\x1b[31m"); // 前景赤色出力
 	count = printf("Hello, World!\n");
 	printf("count = %d\n", count);
 	count = ft_printf("Hello, World!\n");
@@ -143,9 +141,26 @@ printf("\n以下%%p\n");
 	count = ft_printf("0x%p-", (void *)ULONG_MAX);
 	printf("count = %d\n", count);
 
-	count = printf("%pp%p%p", (void *)LONG_MAX + 423856, (void *)0, (void *)INT_MAX);
+	count = printf("%p, %p, %p\n", (void *)LONG_MAX + 423856, (void *)0, (void *)INT_MAX);
 	printf("count = %d\n", count);
-	count = ft_printf("%pp%p%p", (void *)LONG_MAX + 423856, (void *)0, (void *)INT_MAX);
+	count = ft_printf("%p, %p, %p\n", (void *)LONG_MAX + 423856, (void *)0, (void *)INT_MAX);
+	printf("count = %d\n", count);
+
+	int	p_4 = 1234567;
+	count = printf("or:%%p = %p\n", &p_4);
+	printf("count = %d\n", count);
+	count = ft_printf("ft:%%p = %p\n", &p_4);
+	printf("count = %d\n", count);
+
+		void	*p_5 = 0;
+	count = printf("or:%%p = %p\n", p_5);
+	printf("count = %d\n", count);
+	count = ft_printf("ft:%%p = %p\n", p_5);
+	printf("count = %d\n", count);
+
+	count = printf("or:%%p = %p\n", (void *)INT_MAX);
+	printf("count = %d\n", count);
+	count = ft_printf("ft:%%p = %p\n", (void *)INT_MAX);
 	printf("count = %d\n", count);
 
 printf("\n以下%%d\n");
@@ -296,7 +311,7 @@ printf("\n以下%%u\n");
 	count = ft_printf("ft:%%u_unshort_4 = %u\n", u_unshort_4);
 	printf("count = %d\n", count);
 
-		count = printf("dgs%uxx", 10);
+	count = printf("dgs%uxx", 10);
 	printf("count = %d\n", count);
 	count = ft_printf("dgs%uxx", 10);
 	printf("count = %d\n", count);
@@ -367,6 +382,24 @@ printf("\n以下%%x\n");
 	count = ft_printf("%x%xx%x", 1, 2, -3);
 	printf("count = %d\n", count);
 
+	count = printf("%x", INT_MAX);
+	printf("count = %d\n", count);
+	count = ft_printf("%x", INT_MAX);
+	printf("count = %d\n", count);
+	count = printf("%x", UINT_MAX);
+	printf("count = %d\n", count);
+	count = ft_printf("%x", UINT_MAX);
+	printf("count = %d\n", count);
+	count = printf("%x", INT_MIN);
+	printf("count = %d\n", count);
+	count = ft_printf("%x", INT_MIN);
+	printf("count = %d\n", count);
+	count = printf("%x", INT_MIN+1);
+	printf("count = %d\n", count);
+	count = ft_printf("%x", INT_MIN+1);
+	printf("count = %d\n", count);
+
+
 	int	X = 10;
 	count = printf("or:%%X = %X\n", X);
 	printf("count = %d\n", count);
@@ -377,6 +410,24 @@ printf("\n以下%%x\n");
 	printf("count = %d\n", count);
 	count = ft_printf("ft:%% = %%\n");
 	printf("count = %d\n", count);
+
+	count = printf("%X", INT_MAX);
+	printf("count = %d\n", count);
+	count = ft_printf("%X", INT_MAX);
+	printf("count = %d\n", count);
+	count = printf("%X", UINT_MAX);
+	printf("count = %d\n", count);
+	count = ft_printf("%X", UINT_MAX);
+	printf("count = %d\n", count);
+	count = printf("%X", INT_MIN);
+	printf("count = %d\n", count);
+	count = ft_printf("%X", INT_MIN);
+	printf("count = %d\n", count);
+	count = printf("%X", INT_MIN+1);
+	printf("count = %d\n", count);
+	count = ft_printf("%X", INT_MIN+1);
+	printf("count = %d\n", count);
+
 
 
 	count = printf("a%s'`i:%x)79%Xk%dS\f_%i8cP%Xg%dT<y&Ur !e", "{UEw3tOrYp/Z*e%e^XZ23Y@wj\nv", -1823292835, 1620794947, 818754188, -1102400945, 33983181, -550375570);

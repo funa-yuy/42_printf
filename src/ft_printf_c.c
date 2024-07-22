@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:19:31 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/17 22:16:00 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/07/21 01:19:33 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 
 int	ft_printf_c(int c)
 {
-	return (write(STDOUT_FILENO, &c, 1));
+	return (write(1, &c, 1));
 }
