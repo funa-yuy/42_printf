@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 02:07:51 by miyuu             #+#    #+#             */
-/*   Updated: 2024/07/23 19:41:41 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/08/01 17:10:48 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -436,27 +436,33 @@ printf("\x1b[31m\n以下%%x\n");
 
 	// ft_printf("ft:%%p = %p \n", p);
 printf("\x1b[31m\n以下NULL\n");
-	printf("\x1b[39m%c", NULL);
-	ft_printf("\x1b[32m%c", NULL);
-	printf("\x1b[39m%s", NULL);
-	ft_printf("\x1b[32m%s", NULL);
-	printf("\x1b[39m%p", NULL);
-	ft_printf("\x1b[32m%p", NULL);
-	printf("\x1b[39m%d", NULL);
-	ft_printf("\x1b[32m%d", NULL);
-	printf("\x1b[39m%i", NULL);
-	ft_printf("\x1b[32m%i", NULL);
-	printf("\x1b[39m%u", NULL);
-	ft_printf("\x1b[32m%u", NULL);
-	printf("\x1b[39m%x", NULL);
-	ft_printf("\x1b[32m%x", NULL);
-	printf("\x1b[39m%X", NULL);
-	ft_printf("\x1b[32m%X", NULL);
-	printf("\x1b[39m%%");
-	ft_printf("\x1b[32m%%");
+	printf("\x1b[39m%c\n", NULL);
+	ft_printf("\x1b[32m%c\n", NULL);
+	printf("\x1b[39m%s\n", NULL);
+	ft_printf("\x1b[32m%s\n", NULL);
+	printf("\x1b[39m%p\n", NULL);
+	ft_printf("\x1b[32m%p\n", NULL);
+	printf("\x1b[39m%d\n", NULL);
+	ft_printf("\x1b[32m%d\n", NULL);
+	printf("\x1b[39m%i\n", NULL);
+	ft_printf("\x1b[32m%i\n", NULL);
+	printf("\x1b[39m%u\n", NULL);
+	ft_printf("\x1b[32m%u\n", NULL);
+	printf("\x1b[39m%x\n", NULL);
+	ft_printf("\x1b[32m%x\n", NULL);
+	printf("\x1b[39m%X\n", NULL);
+	ft_printf("\x1b[32m%X\n", NULL);
+	printf("\x1b[39m%%\n");
+	ft_printf("\x1b[32m%%\n");
+
+	count = printf("\x1b[39mor:%%s -> %s, %s, %s, %s\n", "", "42Tokyo", "空白　。", "改行\n");
 	count = ft_printf("\x1b[32mft:%%s -> %s, %s, %s, %s\n", "", "42Tokyo", "空白　。", "改行\n");
 	printf("\n");
-	printf("int %%x_int = %x%x%x%x%x%x%x%x%x%x%x%x%x\n", x_int, 1, 2, 3, 10, 16, 42, '1', '2', '3', '10', '16', '42');
+
+	count = printf("\x1b[39mint %%x_int = %x%x%x%x%x%x%x%x%x%x%x%x%x\n", x_int, 1, 2, 3, 10, 16, 42, '1', '2', '3', '10', '16', '42');
+	printf("count = %d\n", count);
+
+	count = ft_printf("\x1b[32mint %%x_int = %x%x%x%x%x%x%x%x%x%x%x%x%x\n", x_int, 1, 2, 3, 10, 16, 42, '1', '2', '3', '10', '16', '42');
 	printf("count = %d\n", count);
 
 
