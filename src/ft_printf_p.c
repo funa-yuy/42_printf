@@ -6,7 +6,7 @@
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 22:19:31 by miyuu             #+#    #+#             */
-/*   Updated: 2024/08/01 16:51:14 by mfunakos         ###   ########.fr       */
+/*   Updated: 2025/01/20 21:30:16 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "../ft_printf.h"
 #include <stdio.h>
 #include <stdint.h>
-
 
 int	ft_printf_p(void *p)
 {

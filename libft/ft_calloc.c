@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 19:57:06 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/08/01 16:50:14 by mfunakos         ###   ########.fr       */
+/*   Created: 2025/01/20 21:28:58 by mfunakos          #+#    #+#             */
+/*   Updated: 2025/01/20 21:29:15 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdint.h>
-
 
 void	*ft_calloc(size_t count, size_t size)
 {

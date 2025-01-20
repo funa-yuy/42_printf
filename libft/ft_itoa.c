@@ -6,7 +6,7 @@
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 21:28:39 by mfunakos          #+#    #+#             */
-/*   Updated: 2025/01/20 21:24:12 by mfunakos         ###   ########.fr       */
+/*   Updated: 2025/01/20 21:28:19 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static size_t	digit(int n)
 static void	set_digit(int n, char *p, size_t cur)
 {
 	p[cur] = n % 10 * ((n > 0) * 2 - 1) + '0';
+	if (n / 10)
 		set_digit(n / 10, p, cur - 1);
 }
 
